@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Nikah - NIKAHFIX Style</title>
+  <!-- Open Graph Meta Tags for WhatsApp/Facebook Thumbnail -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Undangan Pernikahan Awal & Indah">
+  <meta property="og:description" content="Kisah Cinta Kami Akan Segera Tayang. Klik untuk melihat undangan pernikahan Awal & Indah!">
+  <meta property="og:image" content="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758266613/Awal_Indah_vs0ess.png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="600">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:url" content="https://alamat-link-undanganmu.com">
+  <!-- Akhir Open Graph -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap');
+    :root { --nikahfix-red: #e50914; --nikahfix-dark: #141414; --nikahfix-light: #f3f3f3; }
+    body { font-family: 'Poppins', sans-serif; background-color: var(--nikahfix-dark); color: white; margin: 0; padding: 0; overflow-x: hidden;}
+    .hero { height: 100vh; background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative;}
+    .nikahfix-logo { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--nikahfix-red); margin-bottom: 2rem; text-shadow: 0 0 10px rgba(229,9,20,0.5);}
+    .play-button { background-color: var(--nikahfix-red); color: white; border: none; padding: 1rem 2rem; font-size: 1.5rem; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; margin-top: 2rem;}
+    .play-button:hover { background-color: #f40612; transform: scale(1.05);}
+    .section { padding: 4rem 2rem; margin: 2rem 0;}
+    .slide-section { min-height: 40vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(rgba(229,9,20,0.88), rgba(20,20,20,0.92)); border-radius: 16px; margin-bottom: 2rem; box-shadow: 0 5px 30px rgba(0,0,0,0.35);}
+    .family-columns { display: flex; justify-content: center; gap: 2rem; width: 100%; max-width: 800px; margin: 0 auto; }
+    .family-col { flex: 1 1 0; min-width: 180px; background: rgba(30,30,30,0.8); border-radius: 10px; padding: 1.5rem; }
+    .family-col h3 { font-size: 1.2rem; font-weight: bold; margin-bottom: .75rem; color: var(--nikahfix-red);}
+    .family-col ol { padding-left: 1.2em; }
+    .family-col li { margin-bottom: .5rem; }
+    @media (max-width: 768px) {
+      .family-columns { flex-direction: column; gap: 1.5rem; }
+      .family-col { min-width: 0; }
+      .slide-section { min-height: unset; }
+    }
+    .fade-in { animation: fadeInUp .6s cubic-bezier(.39,.575,.565,1) both;}
+    @keyframes fadeInUp {
+      0% { opacity:0; transform: translateY(40px);}
+      100% {opacity:1; transform: translateY(0);}
+    }
+    .couple-section, .date-section, .location-section { background: linear-gradient(rgba(229,9,20,0.8),rgba(20,20,20,0.8)); text-align: center;}
+    .couple-container { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem;}
+    .couple-card { width: 300px; background-color: var(--nikahfix-dark); border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3); transition: transform 0.3s ease; display: flex; flex-direction: column; align-items: center;}
+    .couple-card:hover { transform: translateY(-10px);}
+    .couple-img { width: 100%; height: 300px; object-fit: cover; display: block;}
+    .couple-info h3, .couple-info h4 { text-align: center;}
+    .couple-info { display: flex; flex-direction: column; height: 100%; padding: 1rem; box-sizing: border-box;}
+    .date-card { background-color: rgba(20,20,20,0.8); border-radius: 10px; padding: 2rem; max-width: 800px; margin: 0 auto; box-shadow: 0 5px 15px rgba(0,0,0,0.5);}
+    .countdown { display: flex; justify-content: center; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;}
+    .countdown-item { background-color: var(--nikahfix-red); padding: 1rem; border-radius: 5px; min-width: 80px;}
+    .countdown-number { font-size: 2rem; font-weight: bold;}
+    .map-container { margin-top: 2rem; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3);}
+    .gallery-section { position: relative; z-index: 1; background: linear-gradient(rgba(20,20,20,0.8), rgba(229,9,20,0.7));}
+    .gallery-section::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 2; pointer-events: none; background: linear-gradient(rgba(20,20,20,0.65), rgba(229,9,20,0.5));}
+    .gallery-grid { position: relative; z-index: 3; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem;}
+    .gallery-item { height: 250px; overflow: hidden; border-radius: 5px; position: relative; cursor: pointer; z-index: 4;}
+    .gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; display: block; z-index: 4; position: relative;}
+    .gallery-item:hover .gallery-img { transform: scale(1.1);}
+    .footer { background-color: #000; padding: 2rem; text-align: center;}
+    .social-icons { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0;}
+    .social-icon { color: white; font-size: 1.5rem; transition: color 0.3s ease;}
+    .social-icon:hover { color: var(--nikahfix-red);}
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center;}
+    .modal-content { max-width: 90%; max-height: 90%;}
+    .close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 2rem; cursor: pointer;}
+    .nav { position: fixed; top: 0; width: 100%; background-color: rgba(20,20,20,0.9); z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;}
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--nikahfix-red);}
+    .nav-links { display: flex; gap: 2rem;}
+    .nav-link { color: white; text-decoration: none; transition: color 0.3s ease;}
+    .nav-link:hover { color: var(--nikahfix-red);}
+    .hamburger { display: none; cursor: pointer; font-size: 1.5rem;}
+    @media (max-width: 768px) {
+      .couple-container { flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: stretch; gap: 1rem; width: 100%; margin: 0 auto; overflow-x: hidden;}
+      .couple-card { width: 48%; min-width: 0; max-width: none; margin: 0;}
+      .couple-img { height: 110px;}
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; background-color: var(--nikahfix-dark); width: 100%; padding: 1rem; text-align: center;}
+      .nav-links.active { display: flex;}
+      .hamburger { display: block;}
+      .countdown { flex-direction: column; align-items: center;}
+      .countdown-item { width: 100%;}
+      .slide-section { min-height: unset; }
+    }
+    .audio-control { position: fixed; bottom: 20px; right: 20px; background-color: var(--nikahfix-red); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3);}
+  </style>
+  <style>
+  @media (max-width:600px){
+    .wedding-quote-block {
+      font-size:1rem !important;
+      line-height:1.5 !important;
+    }
+    .wedding-quote-block span {
+      font-size:0.98rem !important;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo">NIKAHFIX</div>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#couple" class="nav-link">Pasangan</a>
+      <a href="#date" class="nav-link">Tanggal</a>
+      <a href="#location" class="nav-link">Lokasi</a>
+      <a href="#gallery" class="nav-link">Galeri</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="nikahfix-logo">NIKAHFIX</div>
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">UNDANGAN PERNIKAHAN</h1>
+    <p class="text-xl md:text-2xl mb-6 max-w-2xl px-4">"Kisah Cinta Kami Akan Segera Tayang"</p>
+    <button class="play-button" id="playButton">
+      <i class="fas fa-play mr-2"></i> PLAY
+    </button>
+    <div id="preweddModal" class="modal" style="display:none; z-index:1050;">
+      <span class="close-modal" onclick="closePreweddModal()">&times;</span>
+      <div style="max-width:90vw; width:100%; display:flex; justify-content:center; align-items:center;">
+        <video id="preweddVideo" width="800" controls style="max-width:100%;">
+          <source src="https://res.cloudinary.com/dubdqfwvm/video/upload/v1750481001/VID-20250620-WA0486_kzzelg.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide Dokumenter -->
+  <section class="section" id="documenter" style="padding-top:6rem; padding-bottom:0;">
+    <div class="slide-section fade-in" style="text-align:left; max-width:700px; margin:0 auto;">
+      <div style="width:100%; display:flex; justify-content:center; margin-bottom:2rem;">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758266613/Awal_Indah_vs0ess.png" alt="Documenter Thumbnail" style="width:100%; max-width:340px; border-radius:10px; box-shadow:0 0 12px rgba(0,0,0,.5);">
+      </div>
+      <div style="background:rgba(30,30,30,0.93); padding:2rem; border-radius:12px;">
+        <div style="margin-bottom:.4rem;">
+          <span style="color:#e50914;letter-spacing:3px;font-weight:bold;">N</span>
+          <span style="color:#aaa;letter-spacing:2px;font-size:.93rem;">DOCUMENTER</span>
+        </div>
+        <div style="font-size:1.5rem;font-weight:bold;margin-bottom:0.6rem;">Awal & Indah: Sebelum Hari H</div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.7rem;flex-wrap:wrap;">
+          <span style="color:#19d569; font-weight:bold; font-size:1.03rem;">100% match</span>
+          <span style="background:#444; color:#eee; font-size:.9rem; padding: 2px 8px; border-radius:5px;">SU</span>
+          <span style="background:#444; color:#eee; font-size:.9rem; padding: 2px 8px; border-radius:5px;">2014 12 12</span>
+          <span style="background:#444; color:#eee; font-size:.9rem; padding: 2px 8px; border-radius:5px;">HD</span>
+        </div>
+        <div style="margin-bottom:1rem;">
+          <span style="background:#e50914; color:#fff; font-size:1rem; padding: 7px 14px; border-radius:16px; display:inline-block;">
+            Coming soon on Saturday, 27 September 2025
+          </span>
+        </div>
+        <div style="color:#eee; margin-bottom: 1.2rem; font-size:1rem;">
+          Setelah Awal dan Indah dipertemukan dalam waktu terbaik, dimana keduanya siap mengikat janji suci.
+Dengan memohon rahmat dan ridho Allah SWT, tibalah mereka di awal perjalanan baru menuju pernikahan.
+        </div>
+        <div style="color:#bbb; font-size:.96rem; font-style:italic;">
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan untukmu pasangan-pasangan dari jenismu sendiri, supaya kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang." (QS. Ar-Rum [30]: 21)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide Breaking News -->
+  <section class="section" id="breaking-news" style="padding-top:0; padding-bottom:0;">
+    <div class="slide-section fade-in" style="background:#111; color:#fff; max-width:700px; margin:0 auto; min-height:40vh; box-shadow:0 5px 30px rgba(0,0,0,0.35); text-align:left;">
+      <h2 style="font-size:2.3rem; font-weight:bold; margin-bottom:1.7rem; margin-top:0;">Breaking News</h2>
+      <div style="width:100%; margin-bottom:1.5rem;">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758268390/32t_hcjpnn.jpg" alt="Breaking News Couple" style="width:100%; max-width:100%; border-radius:16px; object-fit:cover;">
+      </div>
+      <div style="font-size:1.09rem; line-height:1.8; color:#f3f3f3;">
+       Hai teman-teman dan keluarga tersayang! 🤗
+Ada kabar bahagia yang ingin kami bagikan kalau kami akan segera menikah! 💍✨!<br><br>
+        Mungkin undangannya nggak bisa langsung ketemu satu per satu, jadi izinkan kami mengirimkan kabar bahagia ini lewat online.
+Kami berharap doa terbaik dari kalian semua, semoga perjalanan baru ini penuh cinta, kebahagiaan, dan keberkahan.<br><br>
+        Doa dan dukungan kalian adalah hadiah terindah untuk kami di hari istimewa ini.
+Terima kasih sudah menjadi bagian dari cerita kami. ❤️
+        
+        
+        Best regards,<br>
+        Bride and Groom
+      </div>
+    </div>
+  </section>
+
+  <!-- Couple Section -->
+  <section class="section couple-section" id="couple">
+    <h2 class="text-3xl font-bold mb-2">THE MAIN CAST</h2>
+    <p class="text-xl mb-8">Bintang Utama Dalam Kisah Cinta Ini</p>
+    <div class="couple-container">
+      <!-- Bride Card -->
+      <div class="couple-card">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758271113/30t_pq1let.jpg">
+        <div class="couple-info">
+          <h3 class="text-2xl font-bold">Indah Suhartini</h3>
+          <h4 class="text-2xl font-bold mb-2"></h4>
+          <p class="text-gray-400">Putri dari Bapak <span class="text-white">Suherman</span> & Ibu <span class="text-white">Sri Salma Rahayu</span></p>
+          <div class="mt-4" style="text-align:center;">
+            <a href="https://www.instagram.com/ndahshrtnii?igsh=eWJpa3dlN3BpOTJk" target="_blank" class="text-red-500">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Groom Card -->
+      <div class="couple-card">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758271113/31ty_na1z4o.jpg">
+        <div class="couple-info">
+          <h3 class="text-2xl font-bold">Awaludin Ramadan</h3>
+          <h4 class="text-2xl font-bold mb-2"></h4>
+          <p class="text-gray-400">Putra dari Bapak <span class="text-white">Umar Iskandar</span> & Ibu <span class="text-white">Nurbaya Husen</span></p>
+          <div class="mt-4" style="text-align:center;">
+            <a href="https://www.instagram.com/awallramadann?igsh=MWN1bW01ejc4YWUzMA==" target="_blank" class="text-red-500">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Date Section -->
+  <section class="section date-section" id="date">
+    <h2 class="text-3xl font-bold mb-2">RELEASE DATE</h2>
+    <p class="text-xl mb-8">Tanggal Penting Yang Harus Anda Tandai</p>
+    <div class="date-card">
+      <h3 class="text-2xl font-bold mb-4">AKAD NIKAH</h3>
+      <p class="text-xl mb-2">Sabtu, 27 September 2025</p>
+      <p class="text-lg mb-4">09:00 WITA</p>
+      <h3 class="text-2xl font-bold mb-4 mt-8">RESEPSI</h3>
+      <p class="text-xl mb-2">Sabtu, 27 September 2025</p>
+      <p class="text-lg mb-4">19:00 WITA</p>
+      <div class="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" <div class="countdown">
+  <div class="countdown-item">
+    <div class="countdown-number" id="days">00</div>
+    <div>Hari</div>
+  </div>
+  <div class="countdown-item">
+    <div class="countdown-number" id="hours">00</div>
+    <div>Jam</div>
+  </div>
+  <div class="countdown-item">
+    <div class="countdown-number" id="minutes">00</div>
+    <div>Menit</div>
+  </div>
+  <div class="countdown-item">
+    <div class="countdown-number" id="seconds">00</div>
+    <div>Detik</div>
+  </div>
+</div>
+
+<script>
+  // Set target tanggal dan waktu akad nikah (27 Sep 2025 09:00 WITA = GMT+0800)
+  const weddingDate = new Date('September 27, 2025 09:00:00 GMT+0800').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+      // Jika sudah lewat tanggal, set semua ke 00
+      document.getElementById('days').textContent = '00';
+      document.getElementById('hours').textContent = '00';
+      document.getElementById('minutes').textContent = '00';
+      document.getElementById('seconds').textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+  }
+
+  // Jalankan updateCountdown setiap detik
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+  </section>
+
+  <!-- Location Section -->
+  <section class="section location-section" id="location">
+    <h2 class="text-3xl font-bold mb-2">TEMPAT AKAD NIKAH</h2>
+    <p class="text-xl mb-8">Tempat Dimana Janji Suci Dinyatakan</p>
+    <div class="date-card">
+      <h3 class="text-2xl font-bold mb-4">Rumah Bapak Suherman</h3>
+      <p class="text-lg mb-2">Nangaba-Samping Masjid Nimran, Desa Ruku Ramba 
+        RT.004 RW.004</p>
+      <p class="text-lg mb-4">
+        <a href="https://maps.app.goo.gl/E2QSyT2k8irjZYQn7" target="_blank" style="color:#e50914; text-decoration:underline;">
+          Klik peta untuk membuka Google Maps
+        </a>
+      </p>
+      <div class="map-container">
+      <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3995.764923013448!2d121.88061771493744!3d-8.84028319522161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db2a050e6c823b9%3A0xd1e42c8f0925e2e8!2sRumah%20Makan%20Mama%20Indah!5e0!3m2!1sen!2sid!4v1695123456789!5m2!1sen!2sid"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+      </div>
+    </div>
+  </section>
+  <!-- Resepsi Section -->
+  <section class="section location-section">
+    <h2 class="text-3xl font-bold mb-2">TEMPAT RESEPSI</h2>
+    <p class="text-xl mb-8">Lokasi Penerimaan Tamu Undangan</p>
+    <div class="date-card">
+      <h3 class="text-2xl font-bold mb-4">Nangaba, Samping kantor camat Ende</h3>
+      <p class="text-lg mb-2">Desa Ruku Ramba, RT,004 RW.004</p>
+      <p class="text-lg mb-4">
+        <a href="https://maps.app.goo.gl/5QbCBbLLAeCnJsZ6A" target="_blank" style="color:#e50914; text-decoration:underline;">
+          Klik peta untuk membuka Google Maps
+        </a>
+      </p>
+      <div class="map-container">
+        <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1768.0000000000002!2d121.5905667676244!3d-8.798752628356402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f18!3m3!1m2!1s0x2db2a0512e2d6bdf%3A0x28ae0bf845c9b2d4!2sKantor%20Camat%20ENDE!5e1!3m2!1sid!2sid!4v1758273998744!5m2!1sid!2sid" 
+  width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Love Story Section -->
+  <section class="section" id="our-love-story" style="padding-top:0; padding-bottom:0;">
+    <div class="slide-section fade-in" style="background:#111; color:#fff; max-width:700px; margin:0 auto; box-shadow:0 5px 30px rgba(0,0,0,0.35); text-align:left;">
+      <h2 style="font-size:2.3rem; font-weight:bold; margin-bottom:2.4rem; margin-top:0;">Our Love Story</h2>
+      <!-- Episode 1 -->
+      <div style="margin-bottom:2.3rem;">
+        <div style="display:flex; gap:1.2rem; align-items: flex-start;">
+          <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758273129/21t_gqxagq.jpg" alt="Love Story 1" style="width:200px; height:100px; object-fit:cover; border-radius:10px;">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-weight:bold; font-size:1.08rem; margin-bottom:0;">
+              Episode 1:<br>
+              <span style="font-size:1.15rem;">Di kenalin oleh teman</span>
+            </div>
+            <div style="font-size:1rem; color:#ddd; margin-top:.3rem;">2014</div>
+          </div>
+        </div>
+        <div style="font-size:1rem; color:#d4d4d4; margin-left:0; margin-top:1rem;">
+          Karena masih duduk di bangku SMA,iseng2 minta di kenalin sama teman sekolah dulu. Awalnya berpikir ini cuma cinta monyet.
+        </div>
+      </div>
+      <!-- Episode 2 -->
+      <div style="margin-bottom:2.3rem;">
+        <div style="display:flex; gap:1.2rem; align-items: flex-start;">
+          <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758273127/22t_pfluwc.jpg" alt="Love Story 2" style="width:200px; height:100px; object-fit:cover; border-radius:10px;">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-weight:bold; font-size:1.08rem; margin-bottom:0;">
+              Episode 2:<br>
+              <span style="font-size:1.15rem;">Long Distance Relationship</span>
+            </div>
+            <div style="font-size:1rem; color:#ddd; margin-top:.3rem;">2016 - 2023 </div>
+          </div>
+        </div>
+        <div style="font-size:1rem; color:#d4d4d4; margin-left:0; margin-top:1rem;">
+          2016-2019 LDR untuk pertama kali, dimana Indah bekerja di Bali dan Awal di Ende.      2020-2023 LDR untuk kedua kalinya. Sudah berada di pulau yang sama namun berbeda kota. Indah bekerja di Ende dan Awal di Ruteng
+          </div>
+      </div>
+      <!-- Episode 3 -->
+      <div>
+        <div style="display:flex; gap:1.2rem; align-items: flex-start;">
+          <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758273129/25t_iccb2s.jpg" alt="Love Story 3" style="width:200px; height:100px; object-fit:cover; border-radius:10px;">
+          <div style="display:flex; flex-direction:column; justify-content:center;">
+            <div style="font-weight:bold; font-size:1.08rem; margin-bottom:0;">
+              Episode 3:<br>
+              <span style="font-size:1.15rem;">Janji Sehidup Semati</span>
+            </div>
+            <div style="font-size:1rem; color:#ddd; margin-top:.3rem;">2025</div>
+          </div>
+        </div>
+        <div style="font-size:1rem; color:#d4d4d4; margin-left:0; margin-top:1rem;">
+          Di akhit tahun ini, kita berhasil merajut semua benang perjuangan itu menjadi sebuah selimut kehidupan rumah tangga yang baru.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery-section" id="gallery">
+    <h2 class="text-3xl font-bold mb-2">OUR GALLERY</h2>
+    <p class="text-xl mb-8">Momen Spesial Dalam Perjalanan Kami</p>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481977/3_bwfu7h.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277373/52t_avs3j3.jpg" alt="Gallery 1" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481977/2_wu6ql0.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277378/54t_yyvwyh.jpg" alt="Gallery 2" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481979/1_irku7g.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277467/55t_vmndg0.jpg" alt="Gallery 3" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481978/4_ho55ni.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277379/49t_eqtb03.jpg">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481987/8_em0i26.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277969/36t_ypefer.jpg" alt="Gallery 5" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481983/7_jpst0c.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277930/39t_1_mujqts.jpg" alt="Gallery 6" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481981/5_juuu5c.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277927/44t_l2nlrc.jpg" alt="Gallery 7" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481985/9_jqnr3w.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758277926/43t_psgpny.jpg" alt="Gallery 8" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481980/6_icp4pp.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758278246/28t_sfsvaa.jpg" alt="Gallery 9" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481987/12_ij51yq.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758278247/25t_ua1hdw.jpg" alt="Gallery 10" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481985/10_lapl5q.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758278251/27t_b7ku1i.jpg" alt="Gallery 11" class="gallery-img">
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481985/11_r9bboe.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758278251/21t_ckctfv.jpg" alt="Gallery 12" class="gallery-img">
+      </div>
+      </div>
+      <div class="gallery-item" onclick="openModal('https://res.cloudinary.com/dubdqfwvm/image/upload/v1750481977/2_wu6ql0.jpg')">
+        <img src="https://res.cloudinary.com/dubdqfwvm/image/upload/v1758278532/34t_kzpuzg.jpg" alt="Gallery 2" class="gallery-img">
+      </div>
+       </div>
+  </section>
+
+  <!-- SLIDE WEDDING QUOTES -->
+  <section class="section" id="slide-ayat" style="padding-bottom:0;">
+    <div class="slide-section fade-in" style="min-height:40vh;">
+      <h2 class="text-2xl md:text-4xl font-bold mb-8">Wedding Quotes</h2>
+      <blockquote class="wedding-quote-block" style="font-size:2rem;line-height:1.6;max-width:900px;margin:0 auto;text-align:center;">
+        “Maha Suci Allah yang telah menciptakan pasangan-pasangan semuanya, baik dari apa yang ditumbuhkan oleh bumi, dari diri mereka, maupun dari apa yang mereka tidak ketahui.”
+<br>
+        <span style="font-style:italic;font-size:1.3rem;">(QS. Yasin: 36)</span>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- SLIDE KELUARGA YANG MENGUNDANG -->
+  <section class="section" id="slide-keluarga">
+    <div class="slide-section fade-in" style="min-height:40vh;">
+      <h2 class="text-2xl md:text-4xl font-bold mb-8">Keluarga yang Turut Mengundang</h2>
+      <div class="family-columns">
+        <div class="family-col">
+          <h3>Keluarga Mempelai Pria</h3>
+          <ol>
+            <li>Bpk. Hamsah Hamid</li>
+            <li>Bpk. Ruslan A. Gani</li>
+            <li>Bpk. Umar Iskandar</li>
+            <li>Kel. Besar Alm Bpk.Iskandar Ruru</li>
+            <li>Bpk. Haris A. Mejid</li>
+            <li>Bpk. Jaenudin Basa</li>
+            <li>Bpk. Stefanus Gaga</li>
+            <li>Bpk. H. Hadi Muhamad</li>
+            <li>Kel. Besar Sa'o Nepa Ndona</li>
+            <li>Bpk. RT 013 / RW 007</li>
+            <li>Remaja Masjid Nursyuhada Radawuwu Ndona</li>
+            <li>Kel. Besar PT.PLN (Persero) ULTG Flores Timur</li>
+          </ol>
+        </div>
+        <div class="family-col">
+          <h3>Keluarga Mempelai Wanita</h3>
+          <ol>
+            <li>Imam Masjid Nimran Nangaba</li>
+            <li>Kepala Desa Ruku Ramba</li>
+            <li>Bpk. Husen Ahmad Sadam</li>
+            <li>Bpk. Supriyadi M. Ali</li>
+            <li>Bpk. Suwedin H. Amir</li>
+            <li>Bpk. Muhadi</li>
+            <li>Bpk. Umar Haji Ibrahim</li>
+            <li>Bpk. Abdullah Efendi Badare</li>
+            <li>Kel. Besar Jombang</li>
+            <li>Bpk. Kepala Dusun, Ketua RT/RW</li>
+            <li>Kel. Besar Taji Dawi</li>
+            <li>Kel. Besar Alfamart</li>
+          </ol>
+        </div>
+      </div>
+      <div style="margin-top:2em; text-align:center;">
+        Dengan sukacita mengundang Bapak/Ibu/Saudara/i untuk hadir dalam pernikahan putra-putri kami.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="text-xl mb-4">Terima Kasih Telah Menjadi Bagian Dari Kisah Kami</p>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/ndahshrtnii?igsh=eWJpa3dlN3BpOTJk" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.instagram.com/awallramadann?igsh=MWN1bW01ejc4YWUzMA==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="text-gray-500">© 2025 Indah & Awal Wedding. All Rights Reserved.</p>
+      </div>
+      <div>
+  </footer>
+  <!-- Image Modal -->
+  <div class="modal" id="imageModal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img src="" alt="Modal Image" class="modal-content" id="modalImage">
+  </div>
+  <!-- Audio Control tanpa garis putih -->
+  <div class="audio-control" id="audioControl" style="position:fixed; bottom:20px; right:20px; z-index:100;">
+    <i class="fas fa-music"></i>
+  </div>
+  <!-- Audio Element -->
+  <audio id="bgMusic" loop>
+    <source src="https://res.cloudinary.com/dubdqfwvm/video/upload/v1758268063/Wedding_song_awal_jucxdq.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    // Mobile Navigation
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        navLinks.classList.remove('active');
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+    // Countdown Timer
+    const weddingDate = new Date('Jun 27, 2025 15:00:00').getTime();
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    };
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    // Image Modal
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = 'flex';
+      modalImg.src = imageSrc;
+    }
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target == modal) modal.style.display = 'none';
+      const preweddModal = document.getElementById('preweddModal');
+      if (event.target == preweddModal) {
+        preweddModal.style.display = 'none';
+        const preweddVideo = document.getElementById('preweddVideo');
+        preweddVideo.pause();
+      }
+    }
+    // Play Button Video
+    const playButton = document.getElementById('playButton');
+    const preweddModal = document.getElementById('preweddModal');
+    const preweddVideo = document.getElementById('preweddVideo');
+    playButton.addEventListener('click', () => {
+      preweddModal.style.display = 'flex';
+      preweddVideo.currentTime = 0;
+      preweddVideo.play();
+    });
+    function closePreweddModal() {
+      preweddModal.style.display = 'none';
+      preweddVideo.pause();
+    }
+    // Audio Control logic
+    const audioControl = document.getElementById('audioControl');
+    const bgMusic = document.getElementById('bgMusic');
+    let isPlaying = false;
+
+    // Enable music on first interaction for mobile compatibility
+    function enableMusicOnFirstInteraction() {
+      bgMusic.play().then(() => {
+        isPlaying = true;
+        audioControl.innerHTML = '<i class="fas fa-pause"></i>';
+      }).catch(()=>{});
+      window.removeEventListener('touchstart', enableMusicOnFirstInteraction);
+      window.removeEventListener('click', enableMusicOnFirstInteraction);
+    }
+    window.addEventListener('touchstart', enableMusicOnFirstInteraction, {once:true});
+    window.addEventListener('click', enableMusicOnFirstInteraction, {once:true});
+
+    // Toggle play/pause on icon click
+    audioControl.addEventListener('click', () => {
+      if (isPlaying) {
+        bgMusic.pause();
+        audioControl.innerHTML = '<i class="fas fa-music"></i>';
+      } else {
+        bgMusic.play();
+        audioControl.innerHTML = '<i class="fas fa-pause"></i>';
+      }
+      isPlaying = !isPlaying;
+    });
+  </script>
+</body>
+</html>
